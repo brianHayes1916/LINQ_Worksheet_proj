@@ -17,8 +17,9 @@ namespace PracticeProblemsLINQ
         public static List<string> RunProblem1(List<string> words)
         {
             //code
-
+            List<string> thString = words.FindAll(word => word.Contains("th"));
             //return
+            return thString;
 
         }
         #endregion
