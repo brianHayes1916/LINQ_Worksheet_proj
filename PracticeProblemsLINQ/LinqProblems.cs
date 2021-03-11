@@ -17,7 +17,7 @@ namespace PracticeProblemsLINQ
         public static List<string> RunProblem1(List<string> words)
         {
             //code
-            List<string> thString = words.FindAll(word => word.Contains("th"));
+            var thString = words.Where(word => word.Contains("th")).ToList();
             //return
             return thString;
 
@@ -30,8 +30,9 @@ namespace PracticeProblemsLINQ
         public static List<string> RunProblem2(List<string> names)
         {
             //code
-
+            List<string> copiedList = names.Distinct().ToList();
             //return
+            return copiedList;
 
         }
         #endregion
@@ -42,8 +43,10 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem3(List<Customer> customers)
         {
             //code
-
+            var loneCustomer = customers.Where(customer => customer.FirstName == "Mike").ToList();
+            Customer customer1 = loneCustomer[1];
             //return
+            return customer1;
 
         }
         #endregion
@@ -55,6 +58,9 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
             //code
+            var newListID = customers.Where(customer => customer.Id == 3).ToList();
+            var newListFirst = newListID.Select(customer => customer.FirstName = "Lorenzo").ToList();
+
 
             //return
 
