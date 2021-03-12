@@ -44,7 +44,7 @@ namespace PracticeProblemsLINQ
         {
             //code
             var loneCustomer = customers.Where(customer => customer.FirstName == "Mike").ToList();
-            Customer customer1 = loneCustomer[1];
+            Customer customer1 = loneCustomer[0];
             //return
             return customer1;
 
@@ -59,10 +59,12 @@ namespace PracticeProblemsLINQ
         {
             //code
             var newListID = customers.Where(customer => customer.Id == 3).ToList();
-            var newListFirst = newListID.Select(customer => customer.FirstName = "Lorenzo").ToList();
-
-
+            //var newListFirst = newListID.Select(customer => customer.FirstName = "Lorenzo").ToList();
+            Customer customer1 = newListID[0];
+            customer1.FirstName = "Lorenzo";
+            customer1.LastName = "Ravioli";
             //return
+            return customer1;
 
         }
         #endregion
@@ -76,23 +78,24 @@ namespace PracticeProblemsLINQ
         public static double RunProblem5(List<string> classGrades)
         {
             //code
-
+            var holder = classGrades.Where(grade => grade.Split(',').Select(int.Parse)).ToList();
+            var removedLowest = holder.Remove
             //return
 
         }
         #endregion
 
-        #region Bonus Problem 1
-        //(5 points) Bonus Problem 1
-        //Write a method that takes in a string of letters(i.e. “Terrill”) 
-        //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
-        public static string RunBonusProblem1(string word)
-        {
-            //code
+        //#region Bonus Problem 1
+        ////(5 points) Bonus Problem 1
+        ////Write a method that takes in a string of letters(i.e. “Terrill”) 
+        ////and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
+        //public static string RunBonusProblem1(string word)
+        //{
+        //    //code
 
-            //return
+        //    //return
 
-        }
-        #endregion
+        //}
+        //#endregion
     }
 }
